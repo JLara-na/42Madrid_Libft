@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 16:07:21 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/16 20:54:33 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/16 21:06:06 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/16 21:11:17 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <stdlib.h>
-# include <unistd.h>
-# include <stddef.h>
-# include <stdio.h>
-
-/*typedef struct	s_list
+void	*(void *b, int c, size_t len)
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-*/
-int	ft_isalpha(int j);
-int	ft_isdigit(int j);
-int	ft_isalnum(int j);
-int	ft_isascii(int j);
-int	ft_isprint(int j);
-size_t	ft_strlen(const char *j);
-
-#endif
+	size_t	i;
+	
+	i = 0;
+	if (!b)
+		return (NULL);
+	while (i < len)
+		(
+}

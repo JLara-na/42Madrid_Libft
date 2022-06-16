@@ -6,12 +6,12 @@
 #    By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 17:02:15 by jlara-na          #+#    #+#              #
-#    Updated: 2022/06/16 20:34:27 by jlara-na         ###   ########.fr        #
+#    Updated: 2022/06/16 20:54:48 by jlara-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-FILES_C = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
+FILES_C = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c
 FILES_O = $(FILES_C:.c=.o)
 #CFILES_BONUS = 
 #OFILES_BONUS = 
