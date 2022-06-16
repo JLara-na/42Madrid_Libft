@@ -6,11 +6,12 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:25:28 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/16 18:30:00 by jlara-na         ###   ########.fr       */
+/*   Updated: 2022/06/16 20:22:51 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isdigit(int	j)
+int	ft_isdigit(int j)
 {
-	return (j <= '0' && j >= '9');
+	return (j >= '0' && j <= '9');
 }
