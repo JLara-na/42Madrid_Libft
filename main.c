@@ -24,11 +24,12 @@ int	main(int ac, char **av)
 		printf("ft_isascii    	  -----> %d\n", ft_isascii(l));
 		printf("ft_isprint   	  -----> %d\n", ft_isprint(l));
 		printf("ft_strlen    	  -----> %zu\n", ft_strlen(t));
-		printf("ft_memset (2)	  -----> %s\n", ft_memset(t, 'x', 2));
-		printf("ft_bzero (nada)   -----> %s\n", t);
-		printf("ft_memcpy (3)     -----> %s\n", ft_memcpy(x, t, 3));
+	//	printf("ft_memset (2)	  -----> %s\n", ft_memset(t, 'x', 2));
+	//	printf("ft_bzero (nada)   -----> %s\n", t);
+	//	printf("ft_memcpy (3)     -----> %s\n", ft_memcpy(x, t, 3));
+	//	printf("%s\n", ft_memmove(t, t + 2, 2));
+		printf("%d\n", ft_strlcpy(t, t + 2, 2));
 
 	}
-	else
-		return (0);
+	return (0);
 }
