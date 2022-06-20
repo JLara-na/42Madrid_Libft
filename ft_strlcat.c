@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 18:52:12 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/20 18:52:17 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/20 19:05:25 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/20 19:25:28 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t			i;
-	unsigned int	cont;
+	size_t	i;
+	size_t	count;
+	size_t	dest_len;
+	size_t	src_len;
 
 	i = 0;
-	cont = 0;
-	while (src[cont])
-		cont++;
-	if (size == 0)
-		return (cont);
-	while (src[i] && i < (size - 1))
+	dest_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	while (src[i] && (dest_len + i) < dstsize - 1 && dstsize != 0)
 	{
-		dest[i] = src[i];
+		dst[dest_len + i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (cont);
+	if (i != 0)
+		dst[dest_len + i] = '\0';
+	if (dstsize < dest_len)
+		count = dstsize + src_len;
+	else
+		count = dest_len + src_len;
+	return (count);
 }
