@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:02:15 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/23 20:57:17 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/23 21:20:09 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/23 21:42:11 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char f(unsigned int i, char c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char str;
-	str = c + 1;
-	return (str);
-}
+	long	nb;
+	char	c;
 
-int main()
-{
-	char str1[] = "12345";
-	char* str2;
-	str2 = ft_strmapi(str1, *f);
-	printf("%s\n", str2);
+	nb = (long)n;
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb *= -1;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		c = '0' + (nb % 10);
+	}
+	else
+		c = '0' + nb;
+	write(fd, &c, 1);
 }

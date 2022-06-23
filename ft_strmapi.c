@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:02:15 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/23 20:57:17 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/23 20:13:28 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/23 20:59:25 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char f(unsigned int i, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char str;
-	str = c + 1;
-	return (str);
-}
+	char	*str;
+	size_t	len;
+	size_t	i;
 
-int main()
-{
-	char str1[] = "12345";
-	char* str2;
-	str2 = ft_strmapi(str1, *f);
-	printf("%s\n", str2);
+	if (!s || !f)
+		return (NULL);
+	i = 0;
+	len = ft_strlen(s);
+	str = (char *)ft_calloc((len + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	return (str);
 }

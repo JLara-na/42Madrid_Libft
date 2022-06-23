@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:02:15 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/23 20:57:17 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/23 21:12:03 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/23 21:15:53 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char f(unsigned int i, char c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char str;
-	str = c + 1;
-	return (str);
-}
+	int	i;
 
-int main()
-{
-	char str1[] = "12345";
-	char* str2;
-	str2 = ft_strmapi(str1, *f);
-	printf("%s\n", str2);
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }
