@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:02:15 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/23 20:57:17 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/30 12:41:47 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/30 17:35:04 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char f(unsigned int i, char c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char str;
-	str = c + 1;
-	return (str);
-}
+	struct s_list	*list;
 
-int main()
-{
-	char str1[] = "12345";
-	char* str2;
-	str2 = ft_strmapi(str1, *f);
-	printf("%s\n", str2);
+	if (!lst)
+		return (NULL);
+	list = lst;
+	while (list->next != NULL)
+		list = list->next;
+	return (list);
 }

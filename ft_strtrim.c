@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 00:58:32 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/22 03:37:46 by jlara-na         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:13:50 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end && if_exist(set, s1[end - 1]))
 		end--;
 	str = (char *) ft_calloc(end - start + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	while (end > start)
 	{
 		end--;

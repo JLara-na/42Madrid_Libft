@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 21:01:51 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/30 15:08:56 by jlara-na         ###   ########.fr       */
+/*   Created: 2022/06/30 17:34:03 by jlara-na          #+#    #+#             */
+/*   Updated: 2022/06/30 17:34:30 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
+	t_list	*list;
 
-	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	if (!src && !dst)
-		return (dst);
-	while (i < n)
+	if (!lst)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		d[i] = s[i];
-		i++;
+		list = ft_lstlast(*lst);
+		list->next = new;
 	}
-	return (dst);
 }

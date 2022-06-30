@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:12:57 by jlara-na          #+#    #+#             */
-/*   Updated: 2022/06/21 23:52:42 by jlara-na         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:28:13 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	str = ft_calloc((ft_strlen(s1) + 1), sizeof(char));
+	if (!str)
+		return (NULL);
 	while (s1[i])
 	{
 		str[i] = s1[i];
